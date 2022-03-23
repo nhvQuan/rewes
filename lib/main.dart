@@ -1,18 +1,24 @@
-import 'package:flutter/cupertino.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
-import 'package:rewes/constants/app_colors.dart';
-import 'package:rewes/screens/Detail_station.dart';
-import 'package:rewes/screens/home_screen.dart';
-import 'package:rewes/widgets/StationItem.dart';
-import 'widgets/mongoose.dart';
-import 'package:rewes/screens/Detail_station.dart';
-import 'package:socket_io_client/socket_io_client.dart' as IO;
-import 'package:rewes/json/station.dart';
+import 'package:url_launcher/url_launcher.dart'; //connect to url
+import 'package:socket_io_client/socket_io_client.dart'
+    as IO; //libary socket.IO
+import 'package:rewes/json/station.dart'; //Json station screen
 import 'package:rewes/json/geolocation.dart';
-import 'package:rewes/DBcollect/mongodb.dart';
-import 'package:rewes/DBcollect/constant.dart';
-import 'package:mongo_dart/mongo_dart.dart';
+
+///Json main screen
+
+import 'package:rewes/constants/app_colors.dart'; // App colors
+import 'package:rewes/screens/home_screen.dart'; // homescreen
+import 'package:rewes/widgets/StationItem.dart'; // item
+import 'package:rewes/screens/Detail_station.dart'; // detail screen
+import 'package:rewes/screens/mongo_data.dart';
+
+/// function connect and getData in mongo
+
+import 'package:rewes/screens/mongoose.dart';
+
+/// Json mongo
+import 'package:mongo_dart/mongo_dart.dart'; //  libary mongo
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -143,7 +149,7 @@ class MyApp extends StatelessWidget {
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.list,
-                  size: 28,
+                  size: 20,
                 ),
                 label: 'Information',
                 backgroundColor: Colors.red),

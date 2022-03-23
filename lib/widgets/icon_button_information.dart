@@ -17,13 +17,9 @@ class CustomIconButton extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24),
           color: AppColors.secondaryAccent.withAlpha(80)),
-      // Wrap the IconButton in a Material widget for the
-      // IconButton's splash to render above the container.
       child: Material(
         borderRadius: BorderRadius.circular(24),
         type: MaterialType.transparency,
-        // Hard Edge makes sure the splash is clipped at the border of this
-        // Material widget, which is circular due to the radius above.
         clipBehavior: Clip.hardEdge,
         child: IconButton(
           color: AppColors.primaryWhiteColor,

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:rewes/constants/app_colors.dart';
 import 'package:rewes/models/spending_category_model.dart';
 import 'package:rewes/widgets/current_time.dart';
-import 'package:rewes/widgets/search_bar.dart';
+
 import 'package:rewes/widgets/StationItem.dart';
-import 'package:rewes/widgets/mongoose.dart';
+import 'package:rewes/screens/mongoose.dart';
 import 'package:socket_io_client/socket_io_client.dart' as IO;
 import 'package:rewes/json/geolocation.dart';
 import 'package:rewes/json/station.dart';
@@ -76,7 +76,7 @@ class _HompageState extends State<Homepage> {
     // String formattedDay = DateFormat('EEE').format(now);
     Size size = MediaQuery.of(context).size;
     return Container(
-      color: Theme.of(context).primaryColor,
+      color: Colors.white,
       child: Column(
         children: [
           Container(
@@ -115,12 +115,12 @@ class _HompageState extends State<Homepage> {
                             Text(
                               '${formattedDate}',
                               style: TextStyle(
-                                color: AppColors.primaryWhiteColor,
+                                color: Colors.white,
                                 fontSize: 18,
                               ),
                             ),
                             Current_time(
-                              color: AppColors.primaryWhiteColor,
+                              color: Colors.white,
                             ),
                           ],
                         ),
@@ -130,29 +130,11 @@ class _HompageState extends State<Homepage> {
                             color: AppColors.secondaryAccent,
                             borderRadius: BorderRadius.circular(32)),
                       ),
-                      // Container(
-                      //   decoration: BoxDecoration(
-                      //       borderRadius: BorderRadius.circular(32),
-                      //       color: AppColors.secondaryAccent),
-                      //   // Wrap the IconButton in a Material widget for the
-                      //   // IconButton's splash to render above the container.
-                      //   child: Material(
-                      //     borderRadius: BorderRadius.circular(32),
-                      //     type: MaterialType.transparency,
-                      //     // Hard Edge makes sure the splash is clipped at the border of this
-                      //     // Material widget, which is circular due to the radius above.
-                      //     clipBehavior: Clip.hardEdge,
-                      //   ),
-                      // ),
                     ]),
               )
               // SizedBox(height: size.height*0.01,),
             ]),
           ),
-          // Padding(
-          //   padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 24),
-          //   // child: SearchBar(),
-          // ),
           Expanded(
             child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
